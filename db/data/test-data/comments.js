@@ -1,20 +1,18 @@
 module.exports = [
     {
-        body; 'mistah waiht how are we supposed to cook when you are a landmass',
+        body: 'mistah waiht how are we supposed to cook when you are a landmass',
         votes: 3, 
         author: 'ABQ_Pinkman',
-        meme_id: 2
+        meme_id: 1
     }, 
     {
-        body: `time traveller: moves a chair
-        the timeline:
-        `
+        body: `chris gayle would like to know ur location`,
         votes: 55, 
-        author: 'youre_looking_mcfly_today'
-        meme_id: 2
+        author: 'RCBStan_420',
+        meme_id: 3
     }, 
     {
-        body: `waltuh`
+        body: `waltuh`,
         votes: 1300,
         author: 'waltuh77', 
         meme_id: 1
