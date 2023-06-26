@@ -89,7 +89,7 @@ describe("PATCH /api/memes/:meme_id", () => {
         });
     });
 
-    test.only("status:200, responds with the updated meme", () => {
+    test("status:200, responds with the updated meme", () => {
       const memeUpdate = { inc_votes: 23};
       return request(app)
         .patch("/api/memes/1")
