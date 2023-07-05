@@ -1,4 +1,4 @@
-const {selectUsers, selectMemes, insertMeme, removeMemeByID, updateMemeByID} = require('./model')
+const {selectUsers, selectMemes, insertMeme, removeMemeByID, updateMemeByID, selectMemeByID} = require('./model')
 
 exports.getUsers = (req, res, next) => {
     selectUsers()
@@ -18,6 +18,20 @@ exports.getMemes = (req, res) => {
 exports.postMeme = (req, res) => {
     insertMeme(req.body).then((meme) => res.status(201).send({meme}))
 };
+
+exports.getMemeByID = (req, res, next) => {
+    const ID = req.params.meme_id;
+    console.log(ID)
+  
+    selectMemeByID(ID)
+      .then((meme) => {
+        res.status(200).send({ meme });
+      })
+      .catch((err) => {
+        next(err);
+      });
+  };
+  
 
 exports.deleteMemeByID = (req, res) => {
     const id = Number(req.url.split('/').at(-1));

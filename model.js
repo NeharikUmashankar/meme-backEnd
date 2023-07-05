@@ -22,6 +22,26 @@ exports.insertMeme = (memeBody) => {
     })
 }
 
+exports.selectMemeByID = (ID) => {
+    if (Number(ID) === NaN) {
+      return Promise.reject({ status: 400, msg: "Bad request" });
+    }
+  
+    return db
+      .query(
+        `
+      SELECT * FROM memes WHERE meme_id = $1;`,
+        [ID]
+      )
+  
+      .then(({ rows }) => {
+        if (rows.length === 0)
+          return Promise.reject({ status: 404, message: "Path not found" });
+        else return rows[0];
+      });
+  };
+  
+
 exports.removeMemeByID = (memeID) => {
     return db.query('DELETE FROM memes where meme_id = $1 RETURNING *;', [memeID])
     .then((info) => {return db.query("SELECT * FROM memes;")})

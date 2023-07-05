@@ -5,7 +5,7 @@ module.exports = [{
 }, 
 {
     title: "title",
-    meme_url: "https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/22b7dbc8540918971ce04be980db3f32~c5_720x720.jpeg?x-expires=1681938000&x-signature=1hvSUsFwDR6JmLVERC2aKgNidzU%3D",
+    meme_url: "https://static.wikia.nocookie.net/ae4ab51d-326e-4694-b958-a54a135d8d94/scale-to-width/755",
     votes: 1
 }, 
 {

@@ -44,6 +44,26 @@ describe("GET api/users", () => {
 
 })
 
+describe("GET api/memes/:meme_id,", () => {
+  test("Responds with a single meme as per specified ID", () => {
+    const ID = 1;
+    return request(app)
+      .get(`/api/memes/${ID}`)
+      .expect(200)
+      .then(({ body }) => {
+        const { meme } = body;
+        console.log(body)
+
+        expect(meme).toEqual({
+          meme_id: 1,
+          title: "jesseh",
+          votes: 4,
+          meme_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRpSiXBADmxkVqp_QW_sHd3PM5mBXscQ-EBA&usqp=CAU',
+        });
+      });
+  });
+});
+
 describe('POST /api/memes', () => {
     test('status:201, responds with meme newly added to the database', () => {
       const newMeme = {
