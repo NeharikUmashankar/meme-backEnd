@@ -34,8 +34,9 @@ exports.getMemeByID = (req, res, next) => {
   
 
 exports.deleteMemeByID = (req, res) => {
-    const id = Number(req.url.split('/').at(-1));
-    removeMemeByID(id).then(() => res.status(204).send({}))
+    // const id = Number(req.url.split('/').at(-1));
+    console.log(req.params.meme_id, '<<<<<<<<IDs')
+    removeMemeByID(req.params.meme_id).then(() => res.status(204).send({}))
 };
 
 exports.patchMemeByID = (req, res, next) => {

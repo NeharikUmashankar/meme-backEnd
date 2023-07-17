@@ -18,6 +18,7 @@ describe("GET api/users", () => {
         .then(({body}) => {
             const {users} = body;
             expect(users).toHaveLength(3);
+            
 
             users.forEach((user) => {
                 expect(user).toEqual(
@@ -86,7 +87,7 @@ describe('POST /api/memes', () => {
   });
 
 describe('DELETE /memes/:id', () => {
-    test('status:204, responds with an empty response body', () => {
+    test.only('status:204, responds with an empty response body', () => {
       return request(app).delete('/api/memes/2').expect(204);
     });
   });
